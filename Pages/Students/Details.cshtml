@@ -1,0 +1,42 @@
+﻿@page "{id:int}"
+@model StudentManagementSystem.Pages.Students.DetailsModel
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<h1>Student Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Student.StudentId)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Student.StudentId)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Student.Name)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Student.Name)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Student.City)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Student.City)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Student.Course)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Student.Course.Name)
+            <small class="text-muted">(@Html.DisplayFor(model => model.Student.Course.LecturerName))</small>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Student.StudentId" class="btn btn-primary">Edit</a>
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</div>
